@@ -4,52 +4,52 @@ const TRACK_GAP = 2;
 const TRACK_COLS = 20;
 const TRACK_ROWS = 15;
 var theArena =  [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 8, 9, 4, 4, 4, 4, 4, 4,
-    4, 4, 4, 4, 4, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 4, 4, 4, 4, 4,
-    4, 4, 4, 0, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0, 0, 0, 4, 4, 4,
-    4, 4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 4, 0, 4, 4,
-    4, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 4, 0, 0, 0, 0, 4,
-    4, 6, 0, 0, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 0, 0, 0, 0, 4,
-    4, 5, 2, 2, 5, 4, 0, 0, 0, 5, 0, 0, 0, 0, 5, 5, 5, 0, 0, 4,
-    4, 4, 4, 4, 4, 4, 0, 4, 0, 0, 0, 5, 0, 0, 0, 0, 5, 0, 5, 4,
-    4, 5, 3, 3, 5, 4, 0, 0, 5, 4, 4, 0, 0, 5, 0, 0, 0, 0, 0, 4,
-    4, 0, 0, 0, 0, 4, 4, 0, 0, 0, 4, 5, 0, 5, 0, 0, 5, 0, 5, 4,
-    4, 0, 0, 0, 0, 4, 4, 0, 5, 0, 4, 0, 0, 5, 0, 0, 0, 0, 0, 4,
-    4, 4, 0, 0, 5, 5, 5, 0, 4, 0, 5, 0, 0, 5, 0, 5, 5, 0, 4, 4,
-    4, 4, 4, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 4, 4, 4,
-    4, 4, 4, 4, 5, 5, 5, 4, 4, 4, 0, 0, 5, 0, 5, 0, 4, 4, 4, 4,
-    4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4];
+                 4, 4, 4, 4, 4, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 4, 4, 4, 4, 4,
+                 4, 4, 4, 0, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0, 0, 0, 4, 4, 4,
+                 4, 4, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 10, 0, 4, 4,
+                 4, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 0, 0, 14, 0, 0, 0, 0, 4,
+                 4, 6, 0, 0, 7, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 0, 0, 0, 0, 4,
+                 4, 17, 2, 2, 17, 14, 0, 0, 0, 14, 0, 0, 0, 0, 14, 10, 14, 0, 0, 4,
+                 4, 20, 18, 19, 20, 14, 0, 14, 0, 0, 0, 14, 0, 0, 0, 0, 14, 0, 14, 4,
+                 4, 17, 3, 3, 17, 14, 0, 0, 10, 14, 14, 0, 0, 10, 0, 0, 0, 0, 0, 4,
+                 4, 6, 0, 0, 7, 14, 14, 0, 0, 0, 14, 13, 0, 10, 0, 0, 14, 0, 14, 4,
+                 4, 6, 0, 0, 7, 14, 14, 0, 10, 0, 14, 0, 0, 10, 0, 0, 0, 0, 0, 4,
+                 4, 4, 0, 0, 10, 14, 14, 0, 10, 0, 10, 0, 0, 10, 0, 14, 14, 0, 4, 4,
+                 4, 4, 4, 0, 0, 0, 0, 0, 14, 0, 0, 0, 0, 0, 0, 0, 0, 4, 4, 4,
+                 4, 4, 4, 4, 14, 14, 14, 4, 4, 4, 0, 0, 14, 0, 14, 0, 4, 4, 4, 4,
+                 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 11, 12, 4, 4, 4, 4, 4, 4, 4, 4];
 
 var slamZone =  [1, 1, 1, 1, 1, 1, 1, 1, 5, 1, 1, 5, 1, 1, 1, 1, 1, 1, 1, 1,
-    1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
-    1, 0, 5, 1, 1, 1, 1, 1, 5, 0, 0, 5, 1, 1, 1, 1, 1, 5, 0, 1,
-    1, 0, 1, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 4, 1, 0, 1,
-    1, 0, 1, 4, 4, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 4, 4, 1, 0, 1,
-    1, 0, 1, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 4, 1, 0, 1,
-    1, 0, 1, 4, 4, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 4, 4, 1, 0, 1,
-    1, 2, 1, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 4, 1, 2, 1,
-    1, 1, 5, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 5, 1, 1,
-    1, 0, 0, 0, 1, 0, 1, 4, 4, 4, 4, 4, 4, 1, 0, 1, 0, 0, 0, 1,
-    5, 0, 5, 0, 5, 0, 1, 4, 5, 3, 3, 5, 4, 1, 0, 5, 0, 5, 0, 5,
-    1, 0, 1, 0, 0, 0, 1, 4, 1, 0, 0, 1, 4, 1, 0, 0, 0, 1, 0, 1,
-    1, 0, 1, 1, 1, 1, 1, 1, 5, 0, 0, 5, 1, 1, 1, 1, 1, 1, 0, 1,
-    1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
-    1, 1, 1, 1, 1, 1, 1, 1, 5, 1, 1, 5, 1, 1, 1, 1, 1, 1, 1, 1];
+                 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
+                 1, 0, 5, 1, 1, 1, 1, 1, 5, 0, 0, 5, 1, 1, 1, 1, 1, 5, 0, 1,
+                 1, 0, 1, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 4, 1, 0, 1,
+                 1, 0, 1, 4, 4, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 4, 4, 1, 0, 1,
+                 1, 0, 1, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 4, 1, 0, 1,
+                 1, 0, 1, 4, 4, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 4, 4, 1, 0, 1,
+                 1, 2, 1, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 4, 1, 2, 1,
+                 1, 1, 5, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 5, 1, 1,
+                 1, 0, 0, 0, 1, 0, 1, 4, 4, 4, 4, 4, 4, 1, 0, 1, 0, 0, 0, 1,
+                 5, 0, 5, 0, 5, 0, 1, 4, 5, 3, 3, 5, 4, 1, 0, 5, 0, 5, 0, 5,
+                 1, 0, 1, 0, 0, 0, 1, 4, 1, 0, 0, 1, 4, 1, 0, 0, 0, 1, 0, 1,
+                 1, 0, 1, 1, 1, 1, 1, 1, 5, 0, 0, 5, 1, 1, 1, 1, 1, 1, 0, 1,
+                 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
+                 1, 1, 1, 1, 1, 1, 1, 1, 5, 1, 1, 5, 1, 1, 1, 1, 1, 1, 1, 1];
 
 var oldLevel =  [4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4,
-    4, 4, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1,
-    4, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
-    1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1,
-    1, 0, 0, 0, 1, 1, 1, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 0, 0, 1,
-    1, 0, 0, 1, 1, 0, 0, 1, 4, 4, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1,
-    1, 0, 0, 1, 0, 0, 0, 0, 1, 4, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1,
-    1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 5, 0, 0, 1, 0, 0, 1,
-    1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1,
-    1, 0, 0, 1, 0, 0, 5, 0, 0, 0, 5, 0, 0, 1, 0, 0, 1, 0, 0, 1,
-    1, 2, 2, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 5, 0, 0, 1,
-    1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1,
-    0, 3, 0, 0, 0, 0, 1, 4, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1,
-    0, 3, 0, 0, 0, 0, 1, 4, 4, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1,
-    1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 4];
+                 4, 4, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1,
+                 4, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
+                 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1,
+                 1, 0, 0, 0, 1, 1, 1, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 0, 0, 1,
+                 1, 0, 0, 1, 1, 0, 0, 1, 4, 4, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1,
+                 1, 0, 0, 1, 0, 0, 0, 0, 1, 4, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1,
+                 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 5, 0, 0, 1, 0, 0, 1,
+                 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1,
+                 1, 0, 0, 1, 0, 0, 5, 0, 0, 0, 5, 0, 0, 1, 0, 0, 1, 0, 0, 1,
+                 1, 2, 2, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 5, 0, 0, 1,
+                 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1,
+                 0, 3, 0, 0, 0, 0, 1, 4, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1,
+                 0, 3, 0, 0, 0, 0, 1, 4, 4, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1,
+                 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 4];
 
 var levelList = [theArena, slamZone, oldLevel];
 var levelNow = 0;
@@ -65,62 +65,71 @@ const TRACK_GARLEFT = 6;
 const TRACK_GARIGHT = 7;
 const CASC_LEFT = 8;
 const CASC_RIGHT = 9;
+const ROSES = 10;
+const MELLOW_LEFT = 11;
+const MELLOW_RIGHT = 12;
+const DEER = 13;
+const BUSH = 14;
+const SMALL_TOWER = 17;
+const DOOR_LEFT = 18;
+const DOOR_RIGHT = 19;
+const WALL_STONE = 20;
 
 function returnTileTypeAtColRow(col, row) {
-if(col >= 0 && col < TRACK_COLS &&
- row >= 0 && row < TRACK_ROWS) {
-  var trackIndexUnderCoord = rowColToArrayIndex(col, row);
-  return trackGrid[trackIndexUnderCoord];
-} else {
- return TRACK_WALL;
-}
+    if(col >= 0 && col < TRACK_COLS &&
+        row >= 0 && row < TRACK_ROWS) {
+         var trackIndexUnderCoord = rowColToArrayIndex(col, row);
+         return trackGrid[trackIndexUnderCoord];
+    } else {
+        return TRACK_WALL;
+    }
 }
 
 function carTrackHandling(whichCar) {
-var carTrackCol = Math.floor(whichCar.x / TRACK_W);
-var carTrackRow = Math.floor(whichCar.y / TRACK_H);
-var trackIndexUnderCar = rowColToArrayIndex(carTrackCol, carTrackRow);
+    var carTrackCol = Math.floor(whichCar.x / TRACK_W);
+    var carTrackRow = Math.floor(whichCar.y / TRACK_H);
+    var trackIndexUnderCar = rowColToArrayIndex(carTrackCol, carTrackRow);
 
-if(carTrackCol >= 0 && carTrackCol < TRACK_COLS &&
- carTrackRow >= 0 && carTrackRow < TRACK_ROWS) {
- var tileHere = returnTileTypeAtColRow( carTrackCol,carTrackRow );
+    if(carTrackCol >= 0 && carTrackCol < TRACK_COLS &&
+        carTrackRow >= 0 && carTrackRow < TRACK_ROWS) {
+        var tileHere = returnTileTypeAtColRow( carTrackCol,carTrackRow );
 
- if(tileHere == TRACK_GOAL) {
-  console.log(whichCar.name + " WINS!");
-  nextLevel();
- } else if(tileHere != TRACK_ROAD) {
-  // next two lines added to fix a bug, mentioned in video 9.6
-  // undoes the car movement which got it onto the wall
-  whichCar.x -= Math.cos(whichCar.ang) * whichCar.speed;
-  whichCar.y -= Math.sin(whichCar.ang) * whichCar.speed;
+        if(tileHere == TRACK_GOAL) {
+            console.log(whichCar.name + " WINS!");
+            nextLevel();
+        } else if(tileHere != TRACK_ROAD) {
+            // next two lines added to fix a bug, mentioned in video 9.6
+            // undoes the car movement which got it onto the wall
+            whichCar.x -= Math.cos(whichCar.ang) * whichCar.speed;
+            whichCar.y -= Math.sin(whichCar.ang) * whichCar.speed;
 
-  whichCar.speed *= -0.5;
- } // end of track found
-} // end of valid col and row
+            whichCar.speed *= -0.5;
+        } // end of track found
+    } // end of valid col and row
 } // end of carTrackHandling func
 
 function rowColToArrayIndex(col, row) {
-return col + TRACK_COLS * row;
+    return col + TRACK_COLS * row;
 }
 
 function drawTracks() {
 
-var arrayIndex = 0;
-var drawTileX = 0;
-var drawTileY = 0;
-for(var eachRow=0;eachRow<TRACK_ROWS;eachRow++) {
- for(var eachCol=0;eachCol<TRACK_COLS;eachCol++) {
+    var arrayIndex = 0;
+    var drawTileX = 0;
+    var drawTileY = 0;
+    for(var eachRow=0;eachRow<TRACK_ROWS;eachRow++) {
+        for(var eachCol=0;eachCol<TRACK_COLS;eachCol++) {
 
-  var arrayIndex = rowColToArrayIndex(eachCol, eachRow);
-  var tileKindHere = trackGrid[arrayIndex];
-  var useImg = trackPics[tileKindHere];
+            var arrayIndex = rowColToArrayIndex(eachCol, eachRow); 
+            var tileKindHere = trackGrid[arrayIndex];
+            var useImg = trackPics[tileKindHere];
 
-  canvasContext.drawImage(useImg,drawTileX,drawTileY);
-  drawTileX += TRACK_W;
-  arrayIndex++;
- } // end of for each col
- drawTileY += TRACK_H;
- drawTileX = 0;
-} // end of for each row
+            canvasContext.drawImage(useImg,drawTileX,drawTileY);
+            drawTileX += TRACK_W;
+            arrayIndex++;
+        } // end of for each col
+        drawTileY += TRACK_H;
+        drawTileX = 0;
+    } // end of for each row
 
 } // end of drawTracks func
