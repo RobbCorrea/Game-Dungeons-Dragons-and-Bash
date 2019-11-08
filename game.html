@@ -3,10 +3,16 @@
 <head>
 	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
 	<meta content="utf-8" http-equiv="encoding">
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
 
 <body>
-<canvas id="gameCanvas" width="800" height="600"></canvas>
+<div class="container" style="text-align:center; margin: 0 auto;">
+	<img id="img-Dungeons" src="./images/logoDDB.jpg" alt="" class="game-logo">
+	<button class="btn btn-pill blue" id="start-game-button">START GAME</button>
+</div>
+
+<canvas id="gameCanvas" width="800" height="600" style="display: none;"></canvas>
 
 <script src="js/GraphicsCommon.js"></script>
 <script src="js/ImageLoading.js"></script>

@@ -44,7 +44,25 @@ function loadImages() {
         {trackType: DOOR_LEFT, theFile: "doorLeftClosed.png"},
         {trackType: DOOR_RIGHT, theFile: "doorRightClosed.png"},
         {trackType: SMALL_TOWER, theFile: "smallTower.png"},
-        {trackType: WALL_STONE, theFile: "wallStone.png"}
+        {trackType: WALL_STONE, theFile: "wallStone.png"},
+        {trackType: DOORUP_LEFT, theFile: "doorUpLeft.png"},
+        {trackType: DOORUP_RIGHT, theFile: "doorUpRight.png"},
+        {trackType: DAISIES, theFile: "daisies.png"},
+        {trackType: PULLKART, theFile: "pullKart.png"},
+        {trackType: TESTYLE, theFile: "testTyle.png"},
+        {trackType: CARPET, theFile: "carpet.png"},
+        {trackType: TABLE_LEFT, theFile: "tableLeft.png"},
+        {trackType: TABLE_RIGHT, theFile: "tableRight.png"},
+        {trackType: HOME_LEFT, theFile: "homeLeft.png"},
+        {trackType: HOME_RIGHT, theFile: "homeRight.png"},
+        {trackType: PAINTING, theFile: "painting.png"},
+        {trackType: FANCY_CHAIR, theFile: "fancyChair.png"},
+        {trackType: SHELF_LEFT, theFile: "bookShelf.png"},
+        {trackType: SHELF_RIGHT, theFile: "bookShelfRight.png"},
+        {trackType: SHELF_TOP, theFile: "bookShelfTopRight.png"},
+        {trackType: SHELF_BOTTOM, theFile: "bookShelfTopLeft.png"},
+        {trackType: BLADES, theFile: "blades.png"},
+        {trackType: FIRE, theFile: "fire.png"}
         ];
 
     picsToLoad = imageList.length;
